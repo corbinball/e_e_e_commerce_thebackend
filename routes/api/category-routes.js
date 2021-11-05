@@ -45,6 +45,20 @@ router.post('/api/categories', (req, res) => {
 
 router.put('/api/categories/:id', (req, res) => {
   // update a category by its `id` value
+  try {
+    const upCatData = await Category.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!upCatData[0]) {
+      res.status(404).json({ message: 'No category with this id!' });
+      return;
+    }
+    res.status(200).json(upCatData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.delete('/api/categories/:id', (req, res) => {
