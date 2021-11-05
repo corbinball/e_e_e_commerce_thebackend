@@ -8,7 +8,9 @@ router.get('/api/tags', async (req, res) => {
   // be sure to include its associated Product data
   try {
     const tagData = await Tag.findAll({
-      include: [{ model: Product }],
+      include: [{ model: Product },
+                { model: ProductTag}
+              ],
     });
     res.status(200).json(tagData);
   } catch (err) {
@@ -16,13 +18,30 @@ router.get('/api/tags', async (req, res) => {
   }
 });
 
-router.get('/api/tags/:id', (req, res) => {
+router.get('/api/tags/:id', async (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
+  try {
+    const oneTagData = await Tag.findByPk(req.params.id, {
+      include: [{ model: Product }],
+    });
+
+    res.status(200).json(oneTagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
-router.post('/api/tags/', (req, res) => {
+router.post('/api/tags/', async (req, res) => {
   // create a new tag
+  try {
+    const newTagData = await Tag.create({
+      tag_name: req.body.tag_name,
+    });
+    res.status(200).json(newTagData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
 router.put('/api/tags/:id', (req, res) => {
