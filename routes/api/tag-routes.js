@@ -52,7 +52,7 @@ router.put('/api/tags/:id', (req, res) => {
         id: req.params.id,
       },
     });
-    if (!userData[0]) {
+    if (!upTagData[0]) {
       res.status(404).json({ message: 'No tag with this id!' });
       return;
     }
@@ -64,7 +64,20 @@ router.put('/api/tags/:id', (req, res) => {
 
 router.delete('/api/tags/:id', (req, res) => {
   // delete on tag by its `id` value
-  
+  try {
+    const delTagData = await Tag.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!delTagData) {
+      res.status(404).json({ message: 'No tag with this id!' });
+      return;
+    }
+    res.status(200).json(delTagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
