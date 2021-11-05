@@ -16,7 +16,7 @@ router.get('/api/categories', async (req, res) => {
   }
 });
 
-router.get('/api/categories/:id', (req, res) => {
+router.get('/api/categories/:id', async (req, res) => {
   // find one category by its `id` value
   // be sure to include its associated Products
   try {
@@ -31,7 +31,7 @@ router.get('/api/categories/:id', (req, res) => {
 
 });
 
-router.post('/api/categories', (req, res) => {
+router.post('/api/categories', async (req, res) => {
   // create a new category
   try {
     const newCatData = await Category.create({
@@ -43,7 +43,7 @@ router.post('/api/categories', (req, res) => {
   }
 });
 
-router.put('/api/categories/:id', (req, res) => {
+router.put('/api/categories/:id', async (req, res) => {
   // update a category by its `id` value
   try {
     const upCatData = await Category.update(req.body, {
@@ -61,7 +61,7 @@ router.put('/api/categories/:id', (req, res) => {
   }
 });
 
-router.delete('/api/categories/:id', (req, res) => {
+router.delete('/api/categories/:id', async (req, res) => {
   // delete a category by its `id` value
   try {
     const delCatData = await Category.destroy({

@@ -44,7 +44,7 @@ router.post('/api/tags/', async (req, res) => {
   }
 });
 
-router.put('/api/tags/:id', (req, res) => {
+router.put('/api/tags/:id', async (req, res) => {
   // update a tag's name by its `id` value
   try {
     const upTagData = await Tag.update(req.body, {
@@ -62,7 +62,7 @@ router.put('/api/tags/:id', (req, res) => {
   }
 });
 
-router.delete('/api/tags/:id', (req, res) => {
+router.delete('/api/tags/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {
     const delTagData = await Tag.destroy({
