@@ -28,11 +28,16 @@ Or delete an existing product, category, or tag.
 
 ## Video-Walkthrough
 
-    Part one: https://watch.screencastify.com/v/GbfH3breA5xuFWAqTtfK
-                https://drive.google.com/file/d/1mcSYgxMUzXArx2UZCXkQOQuG5rHEpAPL/view
+Part one: 
+https://watch.screencastify.com/v/GbfH3breA5xuFWAqTtfK
+                
+https://drive.google.com/file/d/1mcSYgxMUzXArx2UZCXkQOQuG5rHEpAPL/view
 
-    Part two: https://watch.screencastify.com/v/oSYeG94v5jnc2a9UiAsh
-                https://drive.google.com/file/d/13E5aPwN_gG6n5TgXQ2k-6ewq1guGARSp/view
+Part two: 
+
+https://watch.screencastify.com/v/oSYeG94v5jnc2a9UiAsh
+
+https://drive.google.com/file/d/13E5aPwN_gG6n5TgXQ2k-6ewq1guGARSp/view
 
 
 
