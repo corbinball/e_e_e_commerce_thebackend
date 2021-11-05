@@ -39,7 +39,7 @@ router.get('/api/products/:id', async (req, res) => {
 });
 
 // create new product
-router.post('/', (req, res) => {
+router.post('/api/products', (req, res) => {
   /* req.body should look like this...
     {
       product_name: "Basketball",
@@ -112,8 +112,22 @@ router.put('/api/products/:id', (req, res) => {
     });
 });
 
-router.delete('/api/products/:id', (req, res) => {
+router.delete('/api/products/:id', async (req, res) => {
   // delete one product by its `id` value
+  try {
+    const delProData = await Tag.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!delProData) {
+      res.status(404).json({ message: 'No product with this id!' });
+      return;
+    }
+    res.status(200).json(delProData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;
