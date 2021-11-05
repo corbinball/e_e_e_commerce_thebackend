@@ -8,6 +8,7 @@ This application will allow an  e-commerce owner to navigate, create, update, an
 
 ## Table of Contents
 - [Code Link](#code-link)
+- [Video Walkthrough](#video-walkthrough)
 - [Usage](#usage)
 - [Features](#features)
 - [Credits](#credits)
@@ -25,7 +26,7 @@ Update an existing product, category, or tag.
 Or delete an existing product, category, or tag.
 
 
-    :Link to Video of generator in action:
+## Video-Walkthrough
 
     Part one: https://watch.screencastify.com/v/GbfH3breA5xuFWAqTtfK
                 https://drive.google.com/file/d/1mcSYgxMUzXArx2UZCXkQOQuG5rHEpAPL/view
