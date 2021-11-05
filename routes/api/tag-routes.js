@@ -46,10 +46,25 @@ router.post('/api/tags/', async (req, res) => {
 
 router.put('/api/tags/:id', (req, res) => {
   // update a tag's name by its `id` value
+  try {
+    const upTagData = await Tag.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+    if (!userData[0]) {
+      res.status(404).json({ message: 'No tag with this id!' });
+      return;
+    }
+    res.status(200).json(upTagData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.delete('/api/tags/:id', (req, res) => {
   // delete on tag by its `id` value
+  
 });
 
 module.exports = router;
